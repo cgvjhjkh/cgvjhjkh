@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jeison Gutiérrez · Desarrollador Full Stack</title>
+<meta name="description" content="Tecnólogo en Análisis y Desarrollo de Software (SENA). Desarrollo web full stack con JavaScript, Node.js, PHP y bases de datos relacionales.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#c1121f; --red-deep:#8f0d17; --on-red:#fff;
+  --bg:#f6f6f7; --surface:#ffffff; --text:#2a2224; --muted:#6a5f62; --line:#e3dfe0;
+  --head:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'IBM Plex Sans','Segoe UI',system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#1a1517;--surface:#241d20;--text:#f0e9ea;--muted:#b7a9ad;--line:#3a2f33;--red:#e5384a;--red-deep:#a30f1d;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#1a1517;--surface:#241d20;--text:#f0e9ea;--muted:#b7a9ad;--line:#3a2f33;--red:#e5384a;--red-deep:#a30f1d;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 1rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.layout{display:grid;grid-template-columns:minmax(280px,360px) 1fr;min-height:100vh}
+aside{background:var(--red-deep);color:var(--on-red);padding:3rem 2rem;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:2rem;overflow:auto}
+aside{background:linear-gradient(170deg,var(--red) 0%,var(--red-deep) 100%)}
+.name{font:800 clamp(2.6rem,5vw,3.6rem)/.95 var(--head);letter-spacing:-.03em}
+.role{font:500 1.1rem/1.4 var(--head);opacity:.92;margin-top:.9rem}
+.contact{list-style:none;padding:0;display:grid;gap:.9rem;font-size:.95rem}
+.contact span{display:block;font-size:.8rem;opacity:.75}
+.contact a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);overflow-wrap:anywhere}
+.contact a:hover{border-color:#fff}
+.btns{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:auto}
+.btn{display:inline-block;padding:.65rem 1.1rem;border-radius:6px;font-weight:500;text-decoration:none;border:2px solid #fff;color:#fff;background:transparent;cursor:pointer;font-family:inherit;font-size:.95rem}
+.btn.solid{background:#fff;color:var(--red-deep)}
+.btn:hover{background:#fff;color:var(--red-deep)}
+main{padding:4rem clamp(1.5rem,5vw,4.5rem);max-width:56rem}
+section+section{margin-top:3.5rem}
+h2{font:800 1.9rem/1.1 var(--head);letter-spacing:-.02em;margin-bottom:1.2rem}
+.lead{font-size:1.15rem;max-width:62ch}
+.tl{border-left:3px solid var(--red);padding-left:1.6rem;display:grid;gap:2.2rem}
+.job h3{font:800 1.2rem/1.25 var(--head)}
+.job .when{color:var(--muted);font-size:.9rem;margin:.2rem 0 .7rem}
+.job ul{padding-left:1.1rem;display:grid;gap:.45rem;max-width:68ch}
+.job li::marker{color:var(--red)}
+.edu{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.2rem 1.4rem}
+.edu b{font-family:var(--head);font-size:1.1rem}
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.6rem 2rem}
+.stack h3{font:800 1rem var(--head);margin-bottom:.5rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0}
+.chips li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.2rem .8rem;font-size:.9rem}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.6rem}
+.two p+p{margin-top:.4rem}
+footer{margin-top:4rem;color:var(--muted);font-size:.95rem}
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr}
+  aside{position:static;height:auto;padding:2.5rem 1.5rem}
+  .btns{margin-top:0}
+}
+@media (prefers-reduced-motion:no-preference){
+  .name{animation:in .7s ease-out both}
+  @keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+}
+@media print{aside{position:static;height:auto}.btns{display:none}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div>
+      <h1 class="name">Jeison Gutiérrez</h1>
+      <p class="role">Desarrollador Full Stack · Tecnólogo en Análisis y Desarrollo de Software</p>
+    </div>
+    <ul class="contact">
+      <li><span>Ubicación</span>Medellín, Colombia</li>
+      <li><span>Correo</span><a href="mailto:jeisonalfonsogutierrezvillamil@gmail.com">jeisonalfonsogutierrezvillamil@gmail.com</a></li>
+      <li><span>Teléfono</span><a href="tel:+573205842241">+57 320 584 2241</a></li>
+      <li><span>LinkedIn</span><a href="https://linkedin.com/in/jeison-gutierrez" target="_blank" rel="noopener">linkedin.com/in/jeison-gutierrez</a></li>
+      <li><span>GitHub</span><a href="https://github.com/cgvjhjkh" target="_blank" rel="noopener">github.com/cgvjhjkh</a></li>
+    </ul>
+    <div class="btns">
+      <a class="btn solid" href="https://github.com/cgvjhjkh" target="_blank" rel="noopener">Ver mi GitHub</a>
+      <a class="btn" href="mailto:jeisonalfonsogutierrezvillamil@gmail.com">Escribirme</a>
+      <button class="btn" type="button" onclick="window.print()">Guardar como PDF</button>
+    </div>
+  </aside>
+
+  <main>
+    <section id="perfil">
+      <h2>Perfil profesional</h2>
+      <p class="lead">Tecnólogo en Análisis y Desarrollo de Software (SENA) con formación sólida en el diseño, implementación y mantenimiento de aplicaciones web full stack y soluciones de software a medida. Combino frontend con HTML5, CSS3, JavaScript y Bootstrap con lógica backend en Node.js y PHP, y modelo, optimizo y gestiono bases de datos relacionales (MySQL, PostgreSQL, MariaDB) y Supabase. Puedo liderar el levantamiento de requerimientos (SRS), optimizar procesos logísticos e inventarios e integrar control de versiones y automatización.</p>
+    </section>
+
+    <section id="experiencia">
+      <h2>Experiencia</h2>
+      <div class="tl">
+        <article class="job">
+          <h3>Líder de Desarrollo Backend y Bases de Datos — Sistema de Logística y Entregas (Altavista)</h3>
+          <p class="when">Marzo 2026 – Presente · Medellín, Colombia</p>
+          <ul>
+            <li>Diseñé e implementé la arquitectura de base de datos relacional en PostgreSQL y MySQL, reduciendo los tiempos de consulta en un 25% con funciones almacenadas y vistas indexadas.</li>
+            <li>Desarrollé los módulos backend de inventario y trazabilidad de domicilios con Node.js, con control de stock en tiempo real para comercios locales.</li>
+            <li>Redacté las especificaciones técnicas y la documentación de requisitos (SRS) bajo los estándares de calidad del programa ADSO.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <h3>Desarrollador Web Full Stack — E-Commerce “NOVA SCHOOL”</h3>
+          <p class="when">Junio 2026 – Septiembre 2026 · Medellín, Colombia</p>
+          <ul>
+            <li>Construí el panel de administración y la interfaz de comercio electrónico para papelería institucional con PHP, JavaScript, HTML5, CSS3 y Bootstrap.</li>
+            <li>Integré autenticación de usuarios y gestión de catálogo conectada a MySQL, con control de transacciones seguras.</li>
+            <li>Diseñé el sistema de retroalimentación y soporte postventa, mejorando la experiencia del cliente en el flujo de pedidos.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="formacion">
+      <h2>Formación</h2>
+      <div class="edu">
+        <b>Tecnología en Análisis y Desarrollo de Software (ADSO)</b><br>
+        Servicio Nacional de Aprendizaje (SENA) · Ficha 3425707 · En curso (2026)
+      </div>
+      <div class="two" style="margin-top:1.4rem">
+        <p><b>Diseño e Implementación de Bases de Datos Relacionales (SQL / PL/pgSQL)</b><br>SENA · 2026</p>
+        <p><b>Desarrollo de Aplicaciones Web Frontend y Backend</b><br>SENA · 2025 – 2026</p>
+      </div>
+    </section>
+
+    <section id="stack">
+      <h2>Stack tecnológico</h2>
+      <div class="stack">
+        <div><h3>Lenguajes</h3><ul class="chips"><li>JavaScript</li><li>PHP</li><li>HTML5</li><li>CSS3</li><li>SQL</li><li>PL/pgSQL</li></ul></div>
+        <div><h3>Frameworks y librerías</h3><ul class="chips"><li>Node.js</li><li>Bootstrap</li></ul></div>
+        <div><h3>Bases de datos</h3><ul class="chips"><li>PostgreSQL</li><li>MySQL</li><li>MariaDB</li><li>Supabase</li></ul></div>
+        <div><h3>Herramientas</h3><ul class="chips"><li>Git</li><li>GitHub</li><li>VS Code</li></ul></div>
+      </div>
+    </section>
+
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <div class="two">
+        <div>
+          <h3 style="font:800 1rem var(--head);margin-bottom:.5rem">Técnicas</h3>
+          <p>Modelado de bases de datos, levantamiento de requerimientos (SRS), desarrollo web full stack, control de versiones con Git y GitHub.</p>
+        </div>
+        <div>
+          <h3 style="font:800 1rem var(--head);margin-bottom:.5rem">Blandas</h3>
+          <p>Análisis técnico de requerimientos, resolución de problemas complejos, trabajo colaborativo, adaptabilidad tecnológica y pensamiento lógico.</p>
+        </div>
+        <div>
+          <h3 style="font:800 1rem var(--head);margin-bottom:.5rem">Idiomas</h3>
+          <p>Español nativo. Inglés técnico: lectura e interpretación de documentación de software.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>Aprendiendo, construyendo y mejorando cada día.</footer>
+  </main>
+</div>
+</body>
+</html>
